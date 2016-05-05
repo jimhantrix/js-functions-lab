@@ -112,6 +112,14 @@ function filterLongWords (arr,num) {
 
 
 // Bonus 2
-function charactersOccurencesCount() {
+function charactersOccurencesCount(stringToCount) {
+  var characters = {};
 
+  // replacing all Capitals by Lowercase letters and removing spaces
+
+  var stringToCount = stringToCount.toLowerCase().replace(/\s/g, '');
+  stringToCount.split("").forEach(function(l){
+    characters[l] = (isNaN(characters[l]) ? 1 : characters[l] + 1);
+  });
+  return characters;
 }
